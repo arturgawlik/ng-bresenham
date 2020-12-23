@@ -9,13 +9,16 @@ import { Point } from './helpers/point.model';
 export class AppComponent implements OnInit {
 
   previouslySelectedPoint: Point | null = null;
-  pixels: boolean[] | null = null;
+  pixels: boolean[][] | null = null;
 
   ngOnInit(): void {
     this.initPixels();
   }
 
   setPixel(x: number, y: number) {
+    if (!this.pixels)
+      return;
+
     this.pixels[x][y] = true;
     if (!this.previouslySelectedPoint) {
       this.previouslySelectedPoint = { x: x, y: y };
@@ -30,6 +33,8 @@ export class AppComponent implements OnInit {
   }
 
   bline(x0: number, y0: number, x1: number, y1: number) {
+    if (!this.pixels)
+      return;
 
     var dx = Math.abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
     var dy = Math.abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
