@@ -1,9 +1,9 @@
 <div class="flex flex-col bg-indigo-100 w-screen h-screen">
-  <div class="border-b border-gray-900 flex items-center flex-col">
-    <div class="m-3 mb-0 tracking-wider">
+  <div class="border-b border-gray-900">
+    <div class="m-3 mb-0 tracking-wider text-center">
       Wybierz dwa końcowe piksele odcinka.
     </div>
-    <button (click)="initPixels()" class="m-3 mx-auto border-black tracking-wider uppercase shadow rounded-sm p-1 px-10 m-1 active:shadow-none focus:outline-none bg-red-300 active:bg-red-500 hover:bg-red-400">wyczyść</button>
+    <button (click)="initPixels()" class="block my-3 mx-auto border-black tracking-wider uppercase shadow rounded-sm p-1 px-10 active:shadow-none focus:outline-none bg-red-300 active:bg-red-500 hover:bg-red-400">wyczyść</button>
   </div>
   <div class="flex m-auto overflow-x-scroll max-w-full">
     <div class="bg-white" *ngFor="let innerPixels of pixels; let iX = index">
